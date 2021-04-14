@@ -1,0 +1,24 @@
+.navlink {
+  font-weight: bold;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo p {
+  margin: 0;
+  padding: 0;
+  padding-left: 7px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #7691e9;
+}
+
+/* .logo p span { */
+/* color: purple; */
+/* margin-right: 1px; */
+/* } */
