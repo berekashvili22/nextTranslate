@@ -8,8 +8,6 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 export default function Home() {
     const [user] = useAuthState(auth);
 
-    // console.log(user)
-
     const [originalTxt, setOriginalTxt] = useState('');
     const [translatedTxt, setTranslatedTxt] = useState('');
     const [from, setFrom] = useState('en');
@@ -56,9 +54,6 @@ export default function Home() {
 
     // https://youtu.be/svlEVg0To_c?t=5886
     const translate = async (text, from = 'en', to = 'es') => {
-        console.log(text);
-        console.log(from);
-        console.log(to);
         if (text !== '') {
             try {
                 const url = 'https://libretranslate.com/translate';

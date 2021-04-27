@@ -12,16 +12,42 @@ export default function Dictionaries() {
     const dictListRef = db.collection('dictionary').where('user', '==', user.email);
     const [dictListSnapshot] = useCollection(dictListRef);
 
+    const langCode = {
+        'en': 'Arabic',
+        'ar': 'English',
+        'zh': 'Chinese',
+        'fr': 'French',
+        'de': 'German',
+        'hi': 'Hindi',
+        'ga': 'Irish',
+        'it': 'Italian',
+        'ja': 'Japanese',
+        'ko': 'Korean',
+        'pt': 'Portuguese',
+        'ru': 'Russian',
+        'es': 'Spanish'
+    };
+
     return (
         <div className="container pt-5">
+            <div className="dict-list-title-cont">
+                <p className="dict-list-title">Dictionaries</p>
+            </div>
             <div className="row">
                 {dictListSnapshot?.docs.map((dict) => (
                     <div className="col-sm">
-                        <Link href={`/dictionary/${dict.data().id}`} className="card">
-                            <div className="card-body d-flex justify-content-center align-items-center dict-container">
-                                <p>{dict.data().to}</p>
-                                <p>-</p>
-                                <p>{dict.data().from}</p>
+                        <Link href={`/dictionary/${dict.data().id}`} className="dictionary-wrap">
+                            <div className="container">
+                                <div className="book">
+                                    <div className="front">
+                                        <div className="cover">
+                                            <p className="num-up">{dict.data().date}</p>
+                                            <p className="author">
+                                                {langCode[dict.data().to]} - {langCode[dict.data().from]}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </Link>
                     </div>
