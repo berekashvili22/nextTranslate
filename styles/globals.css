@@ -1,89 +1,95 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* font-family: "Roboto", sans-serif; */
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* font-family: "Roboto", sans-serif; */
 }
 
 a {
-  color: inherit;
-  text-decoration: none !important;
+    color: inherit;
+    text-decoration: none !important;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 textarea {
-  resize: none;
+    resize: none;
 }
 
 .no-border {
-  border: 0;
-  outline: 0;
+    border: 0;
+    outline: 0;
 }
 
 .translate-wrap {
-  position: relative;
+    position: relative;
 }
 
 .saveBtn {
-  position: absolute;
-  bottom: 5px;
-  right: 3%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    right: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .saveBtn p {
-  margin: 0;
-  padding: 0;
-  margin-left: 5px;
-  font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 .logo {
-  display: flex;
-  width: 500px;
-  justify-content: center;
-  align-items: center;
-  background-color: yellow !important;
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow !important;
 }
 
 .logo svg {
-  margin-right: 5px;
+    margin-right: 5px;
 }
 
 .logo p {
 }
 
 .dict-container p {
-  margin: 0;
-  padding: 0;
-  color: #333;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .dropDown {
-  display: none;
-  position: absolute;
-  background-color: yellow;
-  width: 200px;
-  height: 135px;
-  bottom: -145px;
-  left: -70px;
-  background-color: #fff;
-  z-index: 10;
-  flex-direction: column;
-  box-shadow: 0px 3px 5px rgba(90, 90, 90, 0.419);
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    width: 200px;
+    height: 135px;
+    bottom: -145px;
+    left: -70px;
+    background-color: #fff;
+    z-index: 10;
+    flex-direction: column;
+    box-shadow: 0px 3px 5px rgba(90, 90, 90, 0.419);
 }
 
 .active {
-  display: flex;
+    display: flex;
+}
+
+.home-main-wrap {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

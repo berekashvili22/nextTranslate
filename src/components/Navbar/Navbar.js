@@ -32,7 +32,7 @@ function Navbar({ user }) {
                                                                <Link href='/' className={styles.a}>Home</Link>
                                                       </li>
                                                       <li className={styles.li}>
-                                                               <Link href='/' className={styles.a}>Dictionaries</Link>
+                                                               <Link href='/dictionaries' className={styles.a}>Dictionaries</Link>
                                                       </li>
                                                       <li className={styles.li}>
                                                                <Link href='/' className={styles.a}>About</Link>
