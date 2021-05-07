@@ -13,8 +13,8 @@ export default function Dictionaries() {
     const [dictListSnapshot] = useCollection(dictListRef);
 
     const langCode = {
-        'en': 'Arabic',
-        'ar': 'English',
+        'en': 'English',
+        'ar': 'Arabic',
         'zh': 'Chinese',
         'fr': 'French',
         'de': 'German',
@@ -34,16 +34,16 @@ export default function Dictionaries() {
                 <p className="dict-list-title">Dictionaries</p>
             </div>
             <div className="row">
-                {dictListSnapshot?.docs.map((dict) => (
+                {dictListSnapshot?.docs.map((dict, index) => (
                     <div className="col-sm">
-                        <Link href={`/dictionary/${dict.data().id}`} className="dictionary-wrap">
+                        <Link href={`/dictionary/${dict.data().id}`} className="dictionary-wrap" key={index}>
                             <div className="container">
                                 <div className="book">
                                     <div className="front">
                                         <div className="cover">
                                             <p className="num-up">{dict.data().date}</p>
                                             <p className="author">
-                                                {langCode[dict.data().to]} - {langCode[dict.data().from]}
+                                                {langCode[dict.data().from]} - {langCode[dict.data().to]}
                                             </p>
                                         </div>
                                     </div>

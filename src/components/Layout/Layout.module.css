@@ -1,21 +1,22 @@
 .navlink {
-  font-weight: bold;
-  color: white;
+    font-weight: bold;
+    color: white;
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo p {
-  margin: 0;
-  padding: 0;
-  padding-left: 7px;
-  font-weight: bold;
-  font-size: 18px;
-  color: #7691e9;
+    margin: 0;
+    padding: 0;
+    padding-left: 7px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #7691e9;
+    /* font-family: 'Montserrat', sans-serif; */
 }
 
 /* .logo p span { */
