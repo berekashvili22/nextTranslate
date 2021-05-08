@@ -1,4 +1,3 @@
-import { styled } from '@material-ui/core';
 import { auth, provider } from '../firebase';
 import styles from '../styles/Login.module.css';
 

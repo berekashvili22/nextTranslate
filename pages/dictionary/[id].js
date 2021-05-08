@@ -9,19 +9,19 @@ export default function Dictionary({ id }) {
     const [wordListSnapshot] = useCollection(wordListRef);
 
     const langCode = {
-        'en': 'English',
-        'ar': 'Arabic',
-        'zh': 'Chinese',
-        'fr': 'French',
-        'de': 'German',
-        'hi': 'Hindi',
-        'ga': 'Irish',
-        'it': 'Italian',
-        'ja': 'Japanese',
-        'ko': 'Korean',
-        'pt': 'Portuguese',
-        'ru': 'Russian',
-        'es': 'Spanish'
+        en: 'English',
+        ar: 'Arabic',
+        zh: 'Chinese',
+        fr: 'French',
+        de: 'German',
+        hi: 'Hindi',
+        ga: 'Irish',
+        it: 'Italian',
+        ja: 'Japanese',
+        ko: 'Korean',
+        pt: 'Portuguese',
+        ru: 'Russian',
+        es: 'Spanish'
     };
 
     const from = langCode[id.slice(0, 2)];
@@ -31,7 +31,7 @@ export default function Dictionary({ id }) {
 
     return (
         <div className="container w-75">
-            <table class="table mt-5  table-hover">
+            <table className="table mt-5  table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

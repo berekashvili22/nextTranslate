@@ -6,7 +6,6 @@ import Login from './login';
 import Loading from '../src/components/Loading/Loading';
 import { useEffect } from 'react';
 
-
 function MyApp({ Component, pageProps }) {
 
   const [user, loading] = useAuthState(auth)

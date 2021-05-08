@@ -13,7 +13,10 @@ export default function Home() {
     const [from, setFrom] = useState('en');
     const [to, setTo] = useState('es');
 
-    const dictRef = db.collection('dictionary').where('user', '==', user.email).where('id', '==', `${from}${to}${user.uid}`);
+    const dictRef = db
+        .collection('dictionary')
+        .where('user', '==', user.email)
+        .where('id', '==', `${from}${to}${user.uid}`);
     const [dictSnapshot] = useCollection(dictRef);
     const dicIsEmpty = dictSnapshot ? dictSnapshot.empty : null;
 
@@ -21,6 +24,14 @@ export default function Home() {
         if (dicIsEmpty == true) createNewDict();
         if (dicIsEmpty == false) addWordToDict();
         cleanFields();
+    };
+
+    // switches langs
+    const switchLangs = () => {
+        let valFrom = from;
+        let valTo = to;
+        setFrom(valTo);
+        setTo(valFrom);
     };
 
     // creates new dictionary record in db
@@ -108,7 +119,11 @@ export default function Home() {
             <div className="container w-50 mt-5 pb-5 shadow p-3 mb-5 bg-white rounded translate-wrap">
                 <div className="row d-flex justify-content-between mb-3">
                     <div className="col-5">
-                        <select className="form-select w-100 no-border" aria-label="Default select example" onChange={onFromChange} defaultValue="en">
+                        <select
+                            className="form-select w-100 no-border"
+                            aria-label="Default select example"
+                            onChange={onFromChange}
+                            defaultValue="en">
                             <option value="en">English</option>
                             <option value="ar">Arabic</option>
                             <option value="zh">Chinese</option>
@@ -132,15 +147,20 @@ export default function Home() {
                             height="22"
                             fill="currentColor"
                             className="bi bi-arrow-left-right"
-                            viewBox="0 0 16 16">
+                            viewBox="0 0 16 16"
+                            onClick={switchLangs}>
                             <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"
                             />
                         </svg>
                     </div>
                     <div className="col-5">
-                        <select className="form-select w-100 no-border" aria-label="Default select example" onChange={onToChange} defaultValue="es">
+                        <select
+                            className="form-select w-100 no-border"
+                            aria-label="Default select example"
+                            onChange={onToChange}
+                            defaultValue="es">
                             <option value="en">English</option>
                             <option value="ar">Arabic</option>
                             <option value="zh">Chinese</option>
@@ -164,14 +184,22 @@ export default function Home() {
                         <label htmlFor="translateInput" className="form-label text-muted">
                             Input Text
                         </label>
-                        <input type="text" className="form-control" id="translateInput" onChange={onInputChange}></input>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="translateInput"
+                            onChange={onInputChange}></input>
                     </div>
 
                     <div className="col-5">
                         <label htmlFor="targetInput" className="form-label text-muted">
                             Translated
                         </label>
-                        <textarea className="form-control" id="targetInput" rows="1" defaultValue={translatedTxt ? translatedTxt : ''}></textarea>
+                        <textarea
+                            className="form-control"
+                            id="targetInput"
+                            rows="1"
+                            defaultValue={translatedTxt ? translatedTxt : ''}></textarea>
                     </div>
                 </div>
                 {translatedTxt ? (
@@ -181,7 +209,7 @@ export default function Home() {
                             width="32"
                             height="32"
                             fill="lightgreen"
-                            class="bi bi-check-circle-fill"
+                            className="bi bi-check-circle-fill"
                             viewBox="0 0 16 16"
                             onClick={addWord}>
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
